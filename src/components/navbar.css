@@ -16,6 +16,20 @@
   width: auto;       
   margin-right: 10px; 
 }
+.nav-link {
+  color: #ffffff !important; 
+  font-weight: 600;         
+  font-size: 1.4rem;         
+  margin-left: 20px;       
+  transition: all 0.3s ease; 
+}
+.nav-link:hover {
+  color: #9955ff !important;
+ scale: calc(1.4);
+}
+.navbar-nav {
+  margin-right: 90px;
+}
 
 
 
