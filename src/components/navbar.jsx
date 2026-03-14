@@ -1,4 +1,6 @@
+import logo from '../assets/img/LOGO.jpg';
 import { Link, useNavigate } from 'react-router-dom';
+import './navbar.css';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -15,8 +17,12 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
       <div className="container-fluid">
         
-        <Link className="navbar-brand fw-bold" to="/">
-          RollZine
+     <Link className="navbar-brand" to="/">
+          <img 
+            src={logo} 
+            alt="Logo de RollZine" 
+            className="d-inline-block align-top logo-navbar"
+          />
         </Link>
 
         <button
