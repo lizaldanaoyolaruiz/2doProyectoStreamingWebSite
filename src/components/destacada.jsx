@@ -6,7 +6,7 @@ function Destacada() {
   const navigate = useNavigate()
 
   const pelicula = {
-    nombre: 'El Conjuro',
+    nombre: 'El Conjuro', 
     descripcion:
       'Los investigadores paranormales Ed y Lorraine Warren ayudan a una familia aterrorizada por una presencia oscura en su casa.',
     imagen: imagenConjuro,
