@@ -1,13 +1,13 @@
-import Navbar from '../components/Navbar'
-import Destacada from '../components/Destacada'
-import RecommendedCarousel from '../components/RecommendedCarousel'
+import Navbar from '../components/navbar'
+import Destacada from '../components/destacada'
+import RecommendedCarousel from '../components/recomendadas'
 
 function Home() {
   return (
     <>
       <Navbar />
       <Destacada />
-      <RecommendedCarousel />
+      <Recomendadas />
     </>
   )
 }

@@ -1,4 +1,4 @@
-function RecommendedCarousel() {
+function Recomendadas() {
   const peliculas = [
     {
       id: 1,
@@ -82,4 +82,4 @@ function RecommendedCarousel() {
   )
 }
 
-export default RecommendedCarousel
+export default Recomendadas
