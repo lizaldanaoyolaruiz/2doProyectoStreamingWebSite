@@ -12,9 +12,9 @@ function App() {
     <BrowserRouter>
       <Routes>
           <Route element={<LoginPage/>} path='/login'/>
-          <Routes element={<ProtectedRoutes/>}>
-            <Routes element={<AdminPage/>} path='/admin'/>
-          </Routes>
+          <Route element={<ProtectedRoutes/>}>
+            <Route element={<AdminPage/>} path='/admin'/>
+          </Route>
       </Routes> 
     </BrowserRouter>
   )
