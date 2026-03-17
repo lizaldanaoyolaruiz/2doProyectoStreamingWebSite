@@ -30,6 +30,85 @@
 .navbar-nav {
   margin-right: 90px;
 }
+.error-login-mensaje {
+  position: absolute;
+  bottom: -35px; 
+  right: 0;
+  background-color: #dc3545; 
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3); 
+  white-space: nowrap;
+  animation: aparecerError 0.3s ease-in-out; 
+}
+
+@keyframes aparecerError {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-search-form {
+  width: 100%;
+  max-width: 400px; 
+}
+
+.search-input {
+  border-radius: 20px; 
+  background-color: rgba(255, 255, 255, 0.1); 
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.search-btn {
+  border-radius: 50%; 
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+.active-link {
+  position: relative;
+}
+
+.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background-color: #fff; 
+  border-radius: 2px;
+}
 
 
 
