@@ -1,6 +1,6 @@
-import Destacada from '../components/destacada'
+import Destacada from '../components/Destacada'
 
-function home() {
+function Home() {
   return (
     <>
         <Destacada />
@@ -9,4 +9,4 @@ function home() {
   )
 }
 
-export default home
+export default Home
