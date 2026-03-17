@@ -1,5 +1,11 @@
+import ModalProduct from "../components/modal";
+
 function AdminPage(){
-    return <h1>ADMIN PAGE</h1>
+    return (
+        <ModalProduct
+            buttonName='Agregar película'
+        />
+    )
 }
 
 
