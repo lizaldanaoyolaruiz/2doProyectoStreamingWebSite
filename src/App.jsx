@@ -2,6 +2,8 @@
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { LoginPage } from './paginas/login'
+import AdminPage from './paginas/admin'
+import ProtectedRoutes from './paginas/protectedRoutes'
 
 function App() {
   
@@ -9,7 +11,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-          <Route element={<LoginPage/>} path='/Login'/>
+          <Route element={<LoginPage/>} path='/login'/>
+          <Routes element={<ProtectedRoutes/>}>
+            <Routes element={<AdminPage/>} path='/admin'/>
+          </Routes>
       </Routes> 
     </BrowserRouter>
   )
