@@ -1,7 +1,7 @@
 
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router'
-import { LoginPage } from './paginas/login'
+import { LoginPage } from './pages/login'
 
 function App() {
   
