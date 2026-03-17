@@ -14,18 +14,20 @@ function Navbar() {
 
   function handleLogout() {
     localStorage.removeItem("auth");
-    navigate("/login");
+    navigate("/");
+    window.location.reload();
   }
 
   function handleLogin(e) {
     e.preventDefault(); 
     
-    // USUARIOS
+    // USUARIOS DE NOSOTROS 
     const usuariosValidos = [
       { email: 'octaviofernandez@10.com', password: 'octavio' },
       { email: 'santibrizuela@11.com', password: 'santi' },
       { email: 'aldanaruiz@12.com', password: 'aldana' },
-      { email: 'mauroseu@13.com', password: 'mauro' }
+      { email: 'mauroseu@13.com', password: 'mauro' },
+      { email: 'alejojose@14.com', password: 'alejo' }
     ];
 
     const usuarioEncontrado = usuariosValidos.find(
@@ -87,6 +89,7 @@ function Navbar() {
                       className="form-control form-control-sm" 
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      maxLength={35} 
                       required
                     />
                     <input 
@@ -95,6 +98,7 @@ function Navbar() {
                       className="form-control form-control-sm" 
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
+                      maxLength={20} 
                       required
                     />
                     <button type="submit" className="btn btn-outline-light btn-sm text-nowrap">
