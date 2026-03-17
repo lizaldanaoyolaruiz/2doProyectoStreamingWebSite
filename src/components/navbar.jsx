@@ -5,13 +5,39 @@ import './navbar.css';
 
 function Navbar() {
   const navigate = useNavigate();
+  
   const [mostrarLogin, setMostrarLogin] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const userAuth = JSON.parse(localStorage.getItem("auth"));
 
   function handleLogout() {
     localStorage.removeItem("auth");
     navigate("/login");
+  }
+
+  function handleLogin(e) {
+    e.preventDefault(); 
+    
+    // USUARIOS
+    const usuariosValidos = [
+      { email: 'octaviofernandez@10.com', password: 'octavio' },
+      { email: 'santibrizuela@11.com', password: 'santi' },
+      { email: 'aldanaruiz@12.com', password: 'aldana' },
+      { email: 'mauroseu@13.com', password: 'mauro' }
+    ];
+
+    const usuarioEncontrado = usuariosValidos.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (usuarioEncontrado) {
+      localStorage.setItem("auth", JSON.stringify({ user: email }));
+      window.location.reload(); 
+    } else {
+      alert("ERROR. Email o contraseña incorrectos. Inténtalo de nuevo.");
+    }
   }
 
   return (
@@ -54,16 +80,22 @@ function Navbar() {
                     Administrar
                   </span>
                 ) : (
-                  <form className="d-flex align-items-center gap-2" onSubmit={(e) => e.preventDefault()}>
+                  <form className="d-flex align-items-center gap-2" onSubmit={handleLogin}>
                     <input 
                       type="email" 
                       placeholder="Email" 
                       className="form-control form-control-sm" 
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
                     />
                     <input 
                       type="password" 
                       placeholder="Contraseña" 
                       className="form-control form-control-sm" 
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
                     />
                     <button type="submit" className="btn btn-outline-light btn-sm text-nowrap">
                       Iniciar sesión
