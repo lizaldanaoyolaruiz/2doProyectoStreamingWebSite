@@ -1,4 +1,4 @@
-import Destacada from '../components/Destacada'
+import Destacada from '../components/temp'
 
 function Home() {
   return (
