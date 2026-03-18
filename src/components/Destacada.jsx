@@ -1,4 +1,4 @@
-import './destacada.css'
+import '../styles/destacada.css'
 import { useNavigate } from 'react-router-dom'
 import imagenConjuro from '../assets/conjuro.jpg'
 
