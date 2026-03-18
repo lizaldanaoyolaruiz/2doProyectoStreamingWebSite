@@ -95,7 +95,7 @@ export default function Home() {
 
             <div className="hero-buttons">
               <button className="btn-primary">▶ Ver ahora</button>
-              <button className="btn-secondary">ℹ Más información</button>
+              <button className="btn-secondary"> ℹ Más información</button>
             </div>
 
             <div className="hero-dots">
@@ -111,8 +111,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN DE PELÍCULAS POPULARES */}
-      
+     {/* PELÍCULAS POPULARES */}
+
       <section className="movie-section">
         <div className="section-header">
           <h2>Películas populares</h2>
