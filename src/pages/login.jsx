@@ -19,12 +19,19 @@ function LoginPage(){
         const passwordMatch = data.password === userFound.password
         if(!passwordMatch){
             alert("Contraseña Incorrecta")
+            localStorage.setItem("auth", JSON.stringify({
+                auth: false,
+            }))
             return
         }
         alert("Usuario Logueado")
-
-
     }
+    delete userFound.password
+    localStorage.setItem("auth", JSON.stringify({
+        auth: true,
+        ...userFound,
+
+    }))
 
     useEffect(()=>{
         SubirUsuarios()
