@@ -8,6 +8,7 @@ function ModalDeleteMovie({ id , getMovies}) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    
     function handleDelete(id) {
         const movies = JSON.parse(localStorage.getItem('movies'));
         const newMovies = movies.filter((movie) => movie.id !== id); 
