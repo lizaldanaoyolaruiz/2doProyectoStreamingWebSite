@@ -1,12 +1,9 @@
-import { useState } from 'react';
+import { nanoid } from 'nanoid';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function ModalProduct({buttonName}) {
-  const [show, setShow] = useState(false);
+function ModalProduct({buttonName, handleClose, handleShow, show}) {
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   function handleCreateMovies(e) {
     e.preventDefault();
@@ -17,9 +14,11 @@ function ModalProduct({buttonName}) {
     if (!currentMovies) {
         currentMovies = [];
     }
+    data.id = nanoid().slice(0,6);
     currentMovies.push(data);
     localStorage.setItem('movies', JSON.stringify(currentMovies));
     form.reset();
+    handleClose();
   }
 
   return (
