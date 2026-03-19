@@ -1,31 +1,29 @@
 import { useEffectEvent, useState } from "react";
-import ModalProduct from "../components/Modal";
+import ModalMovie from "../components/Modal";
+import Button from 'react-bootstrap/Button';
+import ModalDeleteMovie from "../components/ModalDeleteMovie";
 
 function AdminPage() {
 
     const [movies, setMovies] = useState([]);
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
+    function getMovies() {
+        const movies = JSON.parse(localStorage.getItem('movies'));
+        if (!movies) {
+            return;
+        }
+        setMovies(movies);
+    }
 
     useEffect(() => {
-        function getMovies() {
-            const movies = JSON.parse(localStorage.getItem('movies'));
-            if (!movies) {
-                return;
-            }
-            setMovies(movies);
-        }
         getMovies();
-    }, [show]);
+    }, []);
 
     return (
         <>
-            <ModalProduct
+            <ModalMovie
                 buttonName='Agregar película'
-                handleClose={handleClose}
-                handleShow={handleShow}
-                show={show}
+                getMovies={getMovies}
             />
 
             <table border={1}>
@@ -48,6 +46,16 @@ function AdminPage() {
                                 <td>{movie.category}</td>
                                 <td>{movie.description}</td>
                                 <td>{movie.published}</td>
+                                <td>
+                                    <ModalMovie
+                                        buttonName='E'
+                                        getMovies={getMovies}
+                                        id={movie.id}
+                                    />
+                                    <ModalDeleteMovie
+                                        id={movie.id}
+                                    />
+                                </td>
                             </tr>
                         ))
                     }

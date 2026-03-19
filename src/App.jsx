@@ -2,8 +2,10 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router'
 <<<<<<< HEAD
 import { LoginPage } from './paginas/login'
-import AdminPage from './paginas/admin'
+import AdminPage from './paginas/Admin'
 import ProtectedRoutes from './paginas/protectedRoutes'
+import HomePage from './pages/home'
+import MovieDetail from './pages/movieDetail'
 =======
 import { LoginPage } from './pages/Login'
 import Home from './pages/Home'
@@ -14,7 +16,9 @@ function App() {
     <BrowserRouter>
       <Routes>
 <<<<<<< HEAD
+          <Route element={<HomePage/>} path='/'/>
           <Route element={<LoginPage/>} path='/login'/>
+          <Route element={<MovieDetail/>} path='/movie/:id'/>
           <Route element={<ProtectedRoutes/>}>
             <Route element={<AdminPage/>} path='/admin'/>
           </Route>
