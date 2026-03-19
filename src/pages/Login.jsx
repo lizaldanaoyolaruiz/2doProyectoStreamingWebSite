@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { SubirUsuarios } from "../data/user"
 
 function LoginPage(){
-
+    
   
 
     useEffect(()=>{
