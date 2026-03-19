@@ -11,6 +11,17 @@ function LoginPage(){
         console.log(data) 
         const dataFromLS = JSON.parse(localStorage.getItem("users")) 
         const userFound = dataFromLS.find(user => user.email === data.email)
+
+        if (!userFound){ 
+            alert("Usuario No Encontrado") 
+            return 
+        } 
+        const passwordMatch = data.password === userFound.password 
+        if(!passwordMatch){ 
+            alert("Contraseña Incorrecta") 
+            return 
+        } 
+        alert("Usuario Logueado")
     }
 
   
