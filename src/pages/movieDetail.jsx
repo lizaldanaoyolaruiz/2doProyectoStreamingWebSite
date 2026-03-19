@@ -1,5 +1,5 @@
 function MovieDetail() {
-    return <h1>DETALLE</h1>
+    return <h1>DETALLE pelicula</h1>
 }
 
 export default MovieDetail; 
