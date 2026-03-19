@@ -12,6 +12,7 @@ function ModalDeleteMovie({ id }) {
         const movies = JSON.parse(localStorage.getItem('movies'));
         const newMovies = movies.filter((movie) => movie.id !== id); 
         localStorage.setItem('movies', JSON.stringify(newMovies));
+        
     }
 
     useEffect(() => {
