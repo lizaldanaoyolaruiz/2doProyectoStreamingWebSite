@@ -1,8 +1,9 @@
 import { useEffect } from "react"
 import { SubirUsuarios } from "../data/user"
+import { useNavigate } from "react-router"
 
 function LoginPage(){
-
+    const navigate = useNavigate()
     function handleLogin (e){ 
         e.preventDefault() 
         const form = e.target 
@@ -31,10 +32,9 @@ function LoginPage(){
             auth: true,
             ...userFound
         }))
+        useNavigate("/admin")     
     }
-        
-
-  
+      
 
     useEffect(()=>{
         SubirUsuarios()
