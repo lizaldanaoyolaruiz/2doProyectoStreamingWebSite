@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
-function ModalDeleteMovie({ id }) {
+function ModalDeleteMovie({ id , getMovies}) {
 
     const [show, setShow] = useState(false);
     const [movie, setMovie] = useState({});
@@ -12,7 +12,8 @@ function ModalDeleteMovie({ id }) {
         const movies = JSON.parse(localStorage.getItem('movies'));
         const newMovies = movies.filter((movie) => movie.id !== id); 
         localStorage.setItem('movies', JSON.stringify(newMovies));
-        handleShow();
+        handleClose();
+        getMovies();
     }
 
     useEffect(() => {

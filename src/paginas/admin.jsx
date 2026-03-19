@@ -54,6 +54,7 @@ function AdminPage() {
                                     />
                                     <ModalDeleteMovie
                                         id={movie.id}
+                                        getMovies={getMovies}
                                     />
                                 </td>
                             </tr>
