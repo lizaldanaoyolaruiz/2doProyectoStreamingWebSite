@@ -11,10 +11,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
-<<<<<<< HEAD
     "nanoid": "^5.1.7",
-=======
->>>>>>> d335d20cdad938b8406153f7edf5ad432cf5a429
     "react": "^19.2.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.0",
